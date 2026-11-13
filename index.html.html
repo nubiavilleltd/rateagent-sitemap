@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RateAgent.io Sitemap</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f5f8fa; --card:#ffffff; --ink:#14212b; --mute:#5b6b78; --line:#cfd9e0;
+  --public:#0a7fb8; --login:#b36b00; --user:#2b8a57; --agent:#6c4bc4; --admin:#c0392b; --plan:#7a8791;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0f171d; --card:#17222a; --ink:#e8eef2; --mute:#98a8b4; --line:#2f404c;
+    --public:#4cb8ea; --login:#f0a53a; --user:#58c98a; --agent:#a58cf0; --admin:#f0786a; --plan:#8c9aa5;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f171d; --card:#17222a; --ink:#e8eef2; --mute:#98a8b4; --line:#2f404c;
+  --public:#4cb8ea; --login:#f0a53a; --user:#58c98a; --agent:#a58cf0; --admin:#f0786a; --plan:#8c9aa5;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+main{max-width:1240px;margin:0 auto;padding:28px 20px 48px}
+h1{font-size:1.75rem;margin:0 0 4px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 20px;max-width:62ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 26px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:.88rem}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:14px;height:14px;border-radius:3px;background:var(--c)}
+.sw.dash{background:transparent;border:2px dashed var(--plan)}
+.home{display:block;width:max-content;max-width:100%;margin:0 auto;padding:12px 26px;background:var(--public);color:#fff;border-radius:10px;font-weight:700;text-align:center}
+:root[data-theme="dark"] .home{color:#06202d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .home{color:#06202d}}
+.home small{display:block;font-weight:500;opacity:.9}
+.trunk{width:2px;height:24px;background:var(--line);margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;align-items:start;border-top:2px solid var(--line);padding-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:10px;padding:14px 16px 16px;position:relative}
+.card.plan{border-style:dashed;border-top-style:solid}
+.card h2{font-size:1.02rem;margin:0 0 2px;font-weight:700}
+.role{font-size:.8rem;color:var(--c);font-weight:600;margin:0 0 10px}
+ul{list-style:none;margin:0;padding:0}
+ul ul{margin:2px 0 4px 8px;padding-left:14px;border-left:1.5px solid var(--line)}
+li{margin:0;padding:3px 0;font-size:.92rem}
+li .n{color:var(--mute);font-size:.8rem;margin-right:6px;font-variant-numeric:tabular-nums}
+li.act{color:var(--mute);font-style:italic;font-size:.86rem}
+li.flow::before{content:"flow";font-size:.7rem;border:1px solid var(--c);color:var(--c);border-radius:99px;padding:0 6px;margin-right:6px;font-style:normal;font-weight:600}
+li.dash > span.t{border:1.5px dashed var(--plan);border-radius:6px;padding:1px 6px}
+.path{display:block;color:var(--mute);font-size:.76rem;font-family:ui-monospace,Consolas,monospace}
+.foot{margin-top:28px;color:var(--mute);font-size:.84rem;max-width:80ch}
+.foot p{margin:0 0 6px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+  <h1>RateAgent.io sitemap</h1>
+  <p class="sub">Every page of review.rateagent.io, grouped by who can use it. Built from the live site and the app’s URL routes.</p>
+
+  <div class="legend" aria-label="Legend">
+    <span><i class="sw" style="--c:var(--public)"></i>Public</span>
+    <span><i class="sw" style="--c:var(--login)"></i>Sign-up and verification</span>
+    <span><i class="sw" style="--c:var(--user)"></i>User (property customer)</span>
+    <span><i class="sw" style="--c:var(--agent)"></i>Agent</span>
+    <span><i class="sw" style="--c:var(--admin)"></i>Admin (internal)</span>
+    <span>Plain text = a page</span>
+    <span><em>Italic</em> = an action on a page, not a page</span>
+    <span><i style="font-size:.7rem;border:1px solid var(--mute);color:var(--mute);border-radius:99px;padding:0 6px;font-style:normal;font-weight:600">flow</i> a page reached from a specific action, not a menu</span>
+  </div>
+
+  <span class="home">1.0 Home<small>/</small></span>
+  <div class="trunk"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="foot">
+    <p>Numbers are for reference in tickets and discussions.</p>
+  </div>
+</main>
+
+<script>
+var S=[
+{c:'public',h:'Find agents',r:'Public. Some actions need login.',i:[
+ {n:'2.1',t:'Agent search and directory',p:'/agents/search',k:[
+   {a:'Home page search tabs (Agents, Agencies, Location) all lead here as filters'},
+   {a:'Filters: Buy/Sell/Rent, Emirate, Type, Experience'},
+   {a:'Verification status, sort and advanced filter'},
+   {a:'Grid or list view'},
+   {a:'Compare agents: select 2 or 3, then see them side by side in a pop-up'},
+   {a:'Save agent, share and contact on each agent card (message and meeting need login)'}]},
+ {n:'2.2',t:'Agency profile',p:'/agent/agency/[id]'},
+ {n:'2.3',t:'Agent profile',p:'/agents/[slug]',k:[
+   {n:'2.3.1',t:'All reviews'},
+   {n:'2.3.2',t:'All listings',k:[{t:'Listing details'}]},
+   {n:'2.3.3',t:'Unclaimed profile inquiry',f:1,k:[{a:'Guests are asked to log in or register before it is sent'},{a:'After sending, goes to the Messages page (no page of its own)'}]},
+   {a:'Rate agent (login required)'},
+   {a:'Save agent (login required)'},
+   {a:'Send message (login required)'},
+   {a:'Schedule meeting (login required)'},
+   {a:'Contact on WhatsApp'}]}
+]},
+{c:'public',h:'Main menu pages',r:'Public',i:[
+ {n:'3.0',t:'How it works'},
+ {n:'4.0',t:'Plans and pricing'},
+ {n:'5.0',t:'For agents',k:[{n:'5.1',t:'Grow your business'},{n:'5.2',t:'Claim your profile'}]},
+ {n:'6.0',t:'About us'}
+]},
+{c:'public',h:'Footer pages',r:'Public',i:[
+ {n:'7.0',t:'Help and learning',k:[
+   {t:'Blog',k:[{t:'Article: How to choose a real estate agent in Dubai'},{t:'Article: Check an agent’s licence in Dubai'},{t:'Article: Can you trust online reviews?'}]},
+   {t:'Agent guide'},{t:'Home buyer guide'},{t:'Help and FAQs'}]},
+ {n:'8.0',t:'Company',k:[{t:'Careers'},{t:'Contact us'}]},
+ {n:'9.0',t:'Legal',k:[{t:'Terms'},{t:'Privacy policy'},{t:'Cookie policy'},{t:'Data protection'}]}
+]},
+{c:'login',h:'10.0 Sign-up and login',r:'Public until signed in',i:[
+ {t:'Login'},{t:'Register as user'},{t:'Register as agent'},
+ {a:'Social login: Google, Facebook'},
+ {t:'Verify email',k:[{a:'Resend or change email'}]},
+ {t:'Forgot password',k:[{t:'Reset password',k:[{t:'Reset complete'}]}]}
+]},
+{c:'agent',h:'11.0 Agent onboarding',r:'Agent, after registering',i:[
+ {t:'Verify email',f:1},
+ {t:'Agent verification',f:1,k:[
+   {a:'Step 1: enter broker registration number'},
+   {a:'Step 2: upload Emirates ID and submit'},
+   {a:'After submitting, goes to the dashboard Profile page'}]}
+]},
+{c:'user',h:'12.0 User dashboard',r:'Signed-in user',i:[
+ {n:'12.1',t:'Overview',k:[{n:'12.1.1',t:'Notifications'},{n:'12.1.2',t:'Activities'}]},{n:'12.2',t:'Saved agents'},{n:'12.3',t:'My reviews'},
+ {n:'12.4',t:'Messages'},{n:'12.5',t:'Schedule',k:[{a:'Add meeting notes, mark meeting done'}]},
+ {n:'12.6',t:'Profile'},
+ {n:'12.7',t:'Settings',k:[{a:'Change password'},{a:'Turn push notifications on or off'}]},
+ {a:'Help and Privacy links in the sidebar (open the public pages)'},
+ {a:'Sign out'}
+]},
+{c:'agent',h:'13.0 Agent dashboard',r:'Signed-in agent',i:[
+ {n:'13.1',t:'Overview',k:[{n:'13.1.1',t:'Notifications'},{n:'13.1.2',t:'Activities'},{a:'View All on the overview opens Notifications and Activities'},{a:'Add listing'},{a:'Edit custom profile URL'}]},
+ {n:'13.2',t:'Profile',k:[{a:'Update profile details and photo'}]},
+ {n:'13.3',t:'Listings',k:[{a:'Create, edit, delete listing'}]},
+ {n:'13.4',t:'Reviews',k:[{a:'Reply to review, share'}]},{n:'13.5',t:'Messages'},{n:'13.6',t:'Schedule'},
+ {n:'13.7',t:'Analytics (premium)'},{n:'13.8',t:'Settings',k:[{a:'Tabs: Account settings, Work hours (weekly availability)'}]},
+ {a:'Help and Privacy links in the sidebar (open the public Help and Privacy Policy pages)'},
+ {a:'Sign out'}
+]},
+{c:'admin',h:'14.0 Admin panel',r:'Admin only. Path: /super/',i:[
+ {n:'14.1',t:'Overview'},{n:'14.2',t:'Customers'},
+ {n:'14.3',t:'Registered agents',k:[{t:'Agent detail',k:[{a:'Verify agent'}]}]},
+ {n:'14.4',t:'Brokers',k:[{a:'Show or hide broker publicly'},{a:'Import Dubai Land Department package (button)'}]},
+ {n:'14.5',t:'Broker onboarding'},
+ {n:'14.6',t:'Reviews',k:[{t:'Review detail',k:[{a:'Approve review'}]}]},
+ {n:'14.7',t:'Review funnel'},{n:'14.8',t:'Settings'}
+]},
+{c:'public',h:'15.0 System pages',r:'Shown automatically',i:[{t:'Page not found (404)'},{t:'Unauthorized'}]}
+];
+function li(x){
+  if(x.a){return '<li class="act">'+x.a+'</li>';}
+  var cls=(x.f?'flow ':'')+(x.d?'dash':'');
+  var s='<li class="'+cls+'">'+(x.n?'<span class="n">'+x.n+'</span>':'')+'<span class="t">'+x.t+'</span>';
+  if(x.p){s+='<span class="path">'+x.p+'</span>';}
+  if(x.k){s+='<ul>'+x.k.map(li).join('')+'</ul>';}
+  return s+'</li>';
+}
+document.getElementById('grid').innerHTML=S.map(function(c){
+  return '<section class="card'+(c.plan?' plan':'')+'" style="--c:var(--'+c.c+')"><h2>'+c.h+'</h2><p class="role">'+c.r+'</p><ul>'+c.i.map(li).join('')+'</ul></section>';
+}).join('');
+</script>
+</body>
+</html>
